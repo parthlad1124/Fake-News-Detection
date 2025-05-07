@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fakenews.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>Fake News Detector</h1>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </nav>
+
+        <div id="messages"></div>
+        
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Enter news content here...">
+            <button class="attach-button" onclick="handleAttach()"><i class="fas fa-paperclip"></i></button>
+            <button class="send-button" onclick="sendMessage()">Check News</button>
+        </div>
+
+        <div id="result"></div>
+
+        <h3>Real-Time News Fetcher</h3>
+        <input type="text" id="newsQuery" placeholder="Enter topic (e.g., Elections, AI)">
+        <button class="send-button" onclick="fetchNews()">Fetch News</button>
+        
+        <ul id="newsList"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/fakenewsui.js') }}"></script>
+</body>
+</html>
